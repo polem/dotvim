@@ -10,6 +10,7 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'scrooloose/nerdtree'
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
 
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
@@ -88,16 +89,17 @@ set viminfo='10,<10,s10,h
 
 "theme
 set background=dark
-colorscheme solarized
+color molokai
 
 if has("gui_running")
     set fuoptions=maxvert,maxhorz
 "    au GUIEnter * set fullscreen
-    set guifont=Mensch\ for\ Powerline:h15 linespace=0
+    set guifont=Inconsolata-dz\ for\ Powerline:h14 linespace=0
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
     set guioptions+=e
+    set lines=40
 endif
 
 
@@ -118,7 +120,7 @@ let g:UltiSnipsExpandTrigger="<c-tab>"
 let g:UltiSnipsListSnippets="<c-s-tab>"
 
 " Php doc
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
 
 " drupal
