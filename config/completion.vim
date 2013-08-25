@@ -3,13 +3,8 @@ au FileType php set omnifunc=phpcomplete#CompletePHP
 set completeopt-=preview
 set wildmode=longest,list:longest
 
-let g:ycm_autoclose_preview_window_after_completion=1
-
 let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
 let g:SuperTabDefaultCompletionType = "context"
-
-"" YouCompleteMe
-let g:ycm_key_list_previous_completion=['<Up>']
 
 "" Ultisnips
 let g:UltiSnipsExpandTrigger="<c-tab>"

@@ -58,3 +58,5 @@ map <S-F2> :NERDTreeFind<CR>
 nnoremap <f2> :NERDTreeToggle<CR>
 nnoremap <f3> :TagbarToggle<CR>
 
+" vim info
+set viminfo='100,<100,s10,h
