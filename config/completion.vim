@@ -1,10 +1,11 @@
 filetype plugin on
-au FileType php set omnifunc=phpcomplete#CompletePHP
+set omnifunc=syntaxcomplete#Complete
+
 set completeopt-=preview
+set complete+=k
 set wildmode=longest,list:longest
 
-let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "\<c-p>"
 
 "" Ultisnips
 let g:UltiSnipsExpandTrigger="<c-tab>"

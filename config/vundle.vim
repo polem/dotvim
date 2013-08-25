@@ -5,6 +5,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'itchyny/lightline.vim'
 Bundle 'scrooloose/nerdtree'
+
 Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'tmhedberg/matchit'
@@ -20,9 +21,8 @@ Bundle 'ervandew/supertab'
 
 Bundle 'nishigori/vim-php-dictionary'
 Bundle 'SirVer/ultisnips'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'honza/vim-snippets'
 
 Bundle 'dsdeiz/vim-drupal-snippets'
-Bundle 'psynaptic/vim-drupal'
+"Bundle 'psynaptic/vim-drupal'
 
