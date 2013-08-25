@@ -7,5 +7,6 @@ set rtp+=~/.vim/
 runtime config/vundle.vim
 runtime config/main.vim
 runtime config/theme.vim
+runtime config/completion.vim
 
 

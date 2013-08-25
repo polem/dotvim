@@ -18,6 +18,9 @@ set splitbelow
 set splitright
 
 " UI
+set cindent
+set smartindent
+set autoindent
 set scrolloff=8               " Keep x line for scope while scrolling
 set sidescrolloff=8           " same same
 set showmatch                 " Show matching bracket
