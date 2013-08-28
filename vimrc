@@ -33,10 +33,15 @@ Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 
+Bundle 'docteurklein/php-getter-setter.vim'
+Bundle 'scrooloose/syntastic'
+
+Bundle 'kien/ctrlp.vim'
+
 syntax enable
 
 " Enhanced cursor
-set cursorcolumn
+"set cursorcolumn
 set cursorline
 
 set nobackup
@@ -122,6 +127,8 @@ let g:UltiSnipsListSnippets="<c-s-tab>"
 " Php doc
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+
+autocmd BufRead,BufNewFile *.twig set filetype=html.jinja2
 
 " drupal
 augroup drupal
