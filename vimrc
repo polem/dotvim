@@ -51,11 +51,8 @@ set splitbelow
 set splitright
 
 " UI
-set cindent
-set smartindent
-set autoindent
-set scrolloff=4               " Keep x line for scope while scrolling
-set sidescrolloff=4           " same same
+set scrolloff=8               " Keep x line for scope while scrolling
+set sidescrolloff=8           " same same
 set showmatch                 " Show matching bracket
 set number                    " Show line numbers in gutter
 set ruler                     " Always show current position along the bottom
@@ -109,7 +106,10 @@ endif
 
 
 "completion
-filetype plugin on
+filetype on
+filetype plugin indent on
+syntax on
+
 set omnifunc=syntaxcomplete#Complete
 
 set completeopt-=preview
