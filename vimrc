@@ -15,6 +15,9 @@ Bundle 'tomasr/molokai'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'lukaszb/vim-web-indent'
+
 " php
 Bundle 'nishigori/vim-php-dictionary'
 Bundle 'dsdeiz/vim-drupal-snippets'
@@ -126,7 +129,7 @@ let g:UltiSnipsListSnippets="<c-s-tab>"
 
 " Php doc
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+nnoremap <buffer> <C-d> :call pdv#DocumentWithSnip()<CR>
 
 autocmd BufRead,BufNewFile *.twig set filetype=html.jinja2
 
@@ -142,3 +145,51 @@ augroup drupal
     autocmd BufRead,BufNewFile *.test set filetype=drupal.php
 augroup END
 
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'MyFugitive',
+      \   'readonly': 'MyReadonly',
+      \   'modified': 'MyModified',
+      \   'filename': 'MyFilename'
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
+
+function! MyModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! MyReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
+
+function! MyFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
