@@ -25,7 +25,6 @@ Bundle 'dsdeiz/vim-drupal-snippets'
 Bundle 'tmhedberg/matchit'
 Bundle 'godlygeek/tabular'
 
-Bundle 'tpope/vim-fugitive'
 Bundle 'tobyS/pdv'
 Bundle 'tobyS/vmustache'
 
@@ -38,6 +37,8 @@ Bundle 'honza/vim-snippets'
 
 Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'scrooloose/syntastic'
+
+Bundle 'jistr/vim-nerdtree-tabs'
 
 Bundle 'kien/ctrlp.vim'
 
@@ -85,8 +86,8 @@ set expandtab                 " We do not want tabs, do we?
 set listchars=trail:¤,tab:>-
 
 " Mapping
-map <S-F2> :NERDTreeFind<CR>
-nnoremap <f2> :NERDTreeToggle<CR>
+map <S-F2> :NERDTreeToggle<CR>
+nnoremap <f2> :NERDTreeFind<CR>
 nnoremap <f3> :TagbarToggle<CR>
 
 " vim info
@@ -107,7 +108,6 @@ if has("gui_running")
     set lines=40
 endif
 
-
 "completion
 filetype on
 filetype plugin indent on
@@ -118,10 +118,12 @@ set omnifunc=syntaxcomplete#Complete
 set completeopt-=preview
 set complete+=k
 set wildmode=longest,list:longest
-set dict+=~/.vim/bundle/vim-php-dictionary/dict/PHP.dict
-set dict+=~/.vim/drupal.dict
 
 let g:SuperTabDefaultCompletionType = "<c-p>"
+
+" tabs
+let g:nerdtree_tabs_open_on_console_startup=1
+map <f4> <plug>NERDTreeTabsToggle<CR>
 
 "" Ultisnips
 let g:UltiSnipsExpandTrigger="<c-tab>"
@@ -145,6 +147,10 @@ augroup drupal
     autocmd BufRead,BufNewFile *.test set filetype=drupal.php
 augroup END
 
+" Syntastic
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_disabled_filetypes=['sass', 'scss']
+let g:syntastic_enable_highlighting=0
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
