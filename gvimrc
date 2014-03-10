@@ -2,10 +2,10 @@ if has('gui_macvim')
   macmenu Edit.Find.Find\.\.\. key=<nop>
   map <D-f> /
 
-  macmenu File.Print key=<nop>
+  macmenu File.Open\.\.\. key=<nop>
+  map <D-o> :NERDTreeFind<CR>
 
-  macmenu File.New\ Tab key=<nop>
-  map <D-n> :NERDtree<CR>
+  macmenu File.Print key=<nop>
 
   map <D-d> :call pdv#DocumentWithSnip()<CR>
 
@@ -13,7 +13,7 @@ if has('gui_macvim')
   map <D-t> :CtrlP<CR>
 
   macmenu Tools.Make key=<nop>
-  map <D-b> :CtrlPBuffer<CR>
+  map <D-b> :MBEOpen<CR>
 
   imap <D-e> <C-tab>
   imap <D-E> <C-S-tab>

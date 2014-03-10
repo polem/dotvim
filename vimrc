@@ -38,9 +38,9 @@ Bundle 'honza/vim-snippets'
 Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'scrooloose/syntastic'
 
-Bundle 'jistr/vim-nerdtree-tabs'
-
 Bundle 'kien/ctrlp.vim'
+
+Bundle 'fholgado/minibufexpl.vim'
 
 syntax enable
 
@@ -105,7 +105,7 @@ if has("gui_running")
     set guioptions-=r
     set guioptions-=L
     set guioptions+=e
-    set lines=40
+    set lines=50
 endif
 
 "completion
@@ -119,19 +119,17 @@ set completeopt-=preview
 set complete+=k
 set wildmode=longest,list:longest
 
+" Super tab
 let g:SuperTabDefaultCompletionType = "<c-p>"
-
-" tabs
-let g:nerdtree_tabs_open_on_console_startup=1
-map <f4> <plug>NERDTreeTabsToggle<CR>
 
 "" Ultisnips
 let g:UltiSnipsExpandTrigger="<c-tab>"
 let g:UltiSnipsListSnippets="<c-s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Php doc
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <buffer> <C-d> :call pdv#DocumentWithSnip()<CR>
 
 autocmd BufRead,BufNewFile *.twig set filetype=html.jinja2
 
