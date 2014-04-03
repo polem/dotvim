@@ -9,6 +9,8 @@ Bundle 'gmarik/vundle'
 Bundle 'itchyny/lightline.vim'
 Bundle 'scrooloose/nerdtree'
 
+Bundle 'nathanaelkane/vim-indent-guides'
+
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
 
@@ -39,8 +41,13 @@ Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'scrooloose/syntastic'
 
 Bundle 'kien/ctrlp.vim'
+Bundle 'JazzCore/ctrlp-cmatcher'
 
 Bundle 'fholgado/minibufexpl.vim'
+
+Bundle 'heavenshell/vim-jsdoc'
+
+Bundle 'plasticboy/vim-markdown'
 
 syntax enable
 
@@ -89,6 +96,14 @@ set listchars=trail:¤,tab:>-
 map <S-F2> :NERDTreeToggle<CR>
 nnoremap <f2> :NERDTreeFind<CR>
 nnoremap <f3> :TagbarToggle<CR>
+
+" Make CtrlP use ag for listing the files. Way faster and no useless files.
+let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
+
+" Enable indent guides on boot and allow colorschemes to style them.
+nmap <silent> <leader>i :IndentGuidesToggle<CR>
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_auto_colors=0
 
 " vim info
 set viminfo='10,<10,s10,h

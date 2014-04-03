@@ -17,5 +17,4 @@ if has('gui_macvim')
 
   imap <D-e> <C-tab>
   imap <D-E> <C-S-tab>
-
 endif
